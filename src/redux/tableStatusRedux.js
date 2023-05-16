@@ -24,12 +24,12 @@ export const fetchStatus = () => {
 };
 
 // Reducer
-const tableStatusReducer = (statePart = [], action) => {
+const tableStatusReducer = (state = [], action) => {
   switch (action.type) {
     case UPDATE_STATUS:
       return [...action.payload];
     default:
-      return statePart;
+      return state;
   }
 };
 

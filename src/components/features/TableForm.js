@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTableById, editTable } from '../../redux/tablesRedux';
-import { getStatusList } from '../../redux/tableStatusRedux';
+import { getTableById, updateTableOnServer } from '../../redux/tablesRedux';
+import { fetchStatus, getStatusList } from '../../redux/tableStatusRedux';
 
 const TableForm = () => {
   const { id } = useParams();
@@ -27,7 +27,7 @@ const TableForm = () => {
       maxPeopleAmount,
       bill,
     };
-    dispatch(editTable(updatedTable));
+    dispatch(updateTableOnServer(updatedTable));
     navigate('/');
   };
 
@@ -39,6 +39,10 @@ const TableForm = () => {
       setBill(tableData.bill);
     }
   }, [tableData]);
+
+  useEffect(() => {
+    dispatch(fetchStatus());
+  }, [dispatch]);
 
   return (
     <Container>

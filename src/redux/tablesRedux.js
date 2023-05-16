@@ -1,4 +1,4 @@
-import { API_URL } from "../config";
+import { API_URL } from "../config.js";
 
 // Selectors
 export const getTables = (state) => state.tables;
@@ -26,7 +26,7 @@ export const fetchTables = () => {
 export const updateTableOnServer = (table) => {
   return (dispatch) => {
     fetch(`${API_URL}/tables/${table.id}`, {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
