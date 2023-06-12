@@ -1,4 +1,4 @@
-https://waiter--slawomirkarabin.repl.co
+https://waiter.slawomirkarabin.repl.co/
 
 # Getting Started with Create React App
 
