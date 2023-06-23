@@ -1,5 +1,5 @@
 import jsonServer from 'json-server';
-import { API_URL } from './config.js';
+import { API_URL } from './src/config';
 
 const server = jsonServer.create();
 const router = jsonServer.router('build/db/app.json');
