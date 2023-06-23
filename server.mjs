@@ -1,5 +1,5 @@
-const jsonServer = require('json-server');
-const { API_URL } = require('./config');
+import jsonServer from 'json-server';
+import { API_URL } from './config.js';
 
 const server = jsonServer.create();
 const router = jsonServer.router('build/db/app.json');
